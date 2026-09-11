@@ -15,9 +15,9 @@
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Ra3P8 home"><span class="brand-mark">R</span><span>Ra3P8</span></a>
       <nav class="main-nav" aria-label="Primary navigation">
-        <button class="nav-button active" data-view="bible">Bible</button>
-        <button class="nav-button" data-view="songs">Songs</button>
-        <button class="nav-button" data-view="prayer">Prayer</button>
+        <button class="nav-button active" id="bible-tab" data-view="bible" aria-controls="bible-content" aria-selected="true">Bible</button>
+        <button class="nav-button" id="songs-tab" data-view="songs" aria-controls="songs-content" aria-selected="false">Songs</button>
+        <button class="nav-button" id="prayer-tab" data-view="prayer" aria-controls="prayer-content" aria-selected="false">Prayer</button>
       </nav>
       <div class="date-stamp"><span class="pulse"></span><span id="today">Daily bread · 11 Sep 2026</span></div>
     </header>
@@ -46,23 +46,23 @@
         <button class="daily-step" data-target="prayer-content"><span class="step-icon">03</span><span><b>Pray</b><small>One honest sentence</small></span><span class="step-arrow">↗</span></button>
       </section>
 
-      <section class="content-section active-view" id="bible-content" data-panel="bible">
+      <section class="content-section active-view" id="bible-content" data-panel="bible" aria-labelledby="bible-tab">
         <div class="section-heading"><div><p class="eyebrow">01 / Scripture</p><h2>Find your footing.</h2></div><p class="section-note">Search all 66 books of the KJV.<br />The right word often finds you first.</p></div>
-        <div class="search-row"><label class="search-field"><span>⌕</span><input id="bible-search" type="search" placeholder="Search all 66 books, verses, or words..." /><kbd>⌘ K</kbd></label><button class="filter-button" type="button">KJV <span>⌄</span></button></div>
-        <p class="bible-status" id="bible-status">Loading the complete King James Version...</p>
+        <div class="search-row"><label class="search-field"><span>⌕</span><input id="bible-search" type="search" placeholder="Search all 66 books, verses, or words..." aria-label="Search the Bible" /><kbd>⌘ K</kbd></label><label class="select-field"><span class="sr-only">Bible collection</span><select class="filter-button" id="bible-scope" aria-label="Filter Bible collection"><option value="all">All books</option><option value="old">Old Testament</option><option value="new">New Testament</option></select></label></div>
+        <p class="bible-status" id="bible-status" role="status" aria-live="polite">Loading the complete King James Version...</p>
         <div class="bible-layout"><aside class="book-list" id="book-list"><p class="list-label">BOOKS <span>66</span></p><button class="book active" data-book="All books">All books <span>→</span></button></aside><div class="verse-list" id="verse-list"></div></div>
       </section>
 
-      <section class="content-section" id="songs-content" data-panel="songs">
+      <section class="content-section" id="songs-content" data-panel="songs" aria-labelledby="songs-tab" hidden>
         <div class="section-heading"><div><p class="eyebrow">02 / Soundtrack</p><h2>Sing it out.</h2></div><p class="section-note">Find a song for the moment you’re in.<br />Open every track on YouTube.</p></div>
-        <div class="search-row"><label class="search-field"><span>⌕</span><input id="song-search" type="search" placeholder="Search worship songs, artists, lyrics..." /></label><button class="filter-button" type="button">All moods <span>⌄</span></button></div>
+        <div class="search-row"><label class="search-field"><span>⌕</span><input id="song-search" type="search" placeholder="Search worship songs, artists, lyrics..." aria-label="Search worship songs" /></label><label class="select-field"><span class="sr-only">Song mood</span><select class="filter-button" id="song-mood" aria-label="Filter songs by mood"><option value="all">All moods</option><option value="comfort">Comfort</option><option value="gratitude">Gratitude</option><option value="courage">Courage</option><option value="surrender">Surrender</option></select></label></div>
         <div class="song-grid" id="song-list"></div>
         <p class="content-footnote">Lyrics and full recordings live with their original artists on YouTube. Search to discover more.</p>
       </section>
 
-      <section class="content-section" id="prayer-content" data-panel="prayer">
+      <section class="content-section" id="prayer-content" data-panel="prayer" aria-labelledby="prayer-tab" hidden>
         <div class="section-heading"><div><p class="eyebrow">03 / Conversation</p><h2>Make room for prayer.</h2></div><p class="section-note">Name what’s on your heart.<br />Leave with one simple next step.</p></div>
-        <div class="prayer-layout"><div class="prayer-form"><label class="field-label" for="prayer-topic">What are you carrying today?</label><textarea id="prayer-topic" placeholder="A person, a decision, a worry, a thank you..." rows="5"></textarea><div class="prayer-options"><button class="mood active" data-mood="peace">Peace</button><button class="mood" data-mood="gratitude">Gratitude</button><button class="mood" data-mood="courage">Courage</button><button class="mood" data-mood="healing">Healing</button></div><button class="primary-button" id="pray-button">Shape a prayer <span>✦</span></button></div><div class="prayer-output" id="prayer-output"><span class="output-kicker">YOUR QUIET PLACE</span><p class="output-placeholder">Your prayer will meet you here.<br />Start with one honest sentence.</p></div></div>
+        <div class="prayer-layout"><div class="prayer-form"><label class="field-label" for="prayer-topic">What are you carrying today?</label><textarea id="prayer-topic" placeholder="A person, a decision, a worry, a thank you..." rows="5"></textarea><div class="prayer-options"><button class="mood active" data-mood="peace">Peace</button><button class="mood" data-mood="gratitude">Gratitude</button><button class="mood" data-mood="courage">Courage</button><button class="mood" data-mood="healing">Healing</button></div><button class="primary-button" id="pray-button">Shape a prayer <span>✦</span></button></div><div class="prayer-output" id="prayer-output" role="status" aria-live="polite"><span class="output-kicker">YOUR QUIET PLACE</span><p class="output-placeholder">Your prayer will meet you here.<br />Start with one honest sentence.</p></div></div>
       </section>
     </main>
     <footer><span>Ra3P8 / Daily gospel</span><span>Made for the seeking &nbsp;·&nbsp; <a href="#top">Back to top ↑</a></span></footer>
