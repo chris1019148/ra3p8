@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f2eb" />
+    <title>Ra3P8 | Let the word move</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Ra3P8 home"><span class="brand-mark">R</span><span>Ra3P8</span></a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <button class="nav-button active" data-view="bible">Bible</button>
+        <button class="nav-button" data-view="songs">Songs</button>
+        <button class="nav-button" data-view="prayer">Prayer</button>
+      </nav>
+      <div class="date-stamp"><span class="pulse"></span><span id="today">Daily bread · 11 Sep 2026</span></div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">A daily rhythm for your soul</p>
+          <h1>Let the <em>word</em><br />move.</h1>
+          <p class="hero-description">Scripture, song, and stillness for wherever you are today.</p>
+          <div class="hero-actions"><button class="primary-button jump-button" data-target="bible-content">Open today’s verse <span>↘</span></button><span class="read-time">3 min read</span></div>
+        </div>
+        <div class="verse-card" aria-label="Verse of the day">
+          <div class="card-top"><span>VERSE OF THE DAY</span><span class="card-number">01 / 365</span></div>
+          <div class="quote-mark">“</div>
+          <blockquote>Be still, and know that I am God.</blockquote>
+          <cite>Psalm 46:10 <span>— KJV</span></cite>
+          <div class="card-bottom"><span>SELAH</span><span class="tiny-line"></span><span>Take a breath</span></div>
+        </div>
+      </section>
+
+      <section class="daily-strip" aria-label="Today's rhythm">
+        <div class="daily-intro"><span class="eyebrow">TODAY'S RHYTHM</span><strong>Three small ways<br />to stay close.</strong></div>
+        <button class="daily-step" data-target="bible-content"><span class="step-icon">01</span><span><b>Read</b><small>One verse to carry</small></span><span class="step-arrow">↗</span></button>
+        <button class="daily-step" data-target="songs-content"><span class="step-icon">02</span><span><b>Listen</b><small>A song for the road</small></span><span class="step-arrow">↗</span></button>
+        <button class="daily-step" data-target="prayer-content"><span class="step-icon">03</span><span><b>Pray</b><small>One honest sentence</small></span><span class="step-arrow">↗</span></button>
+      </section>
+
+      <section class="content-section active-view" id="bible-content" data-panel="bible">
+        <div class="section-heading"><div><p class="eyebrow">01 / Scripture</p><h2>Find your footing.</h2></div><p class="section-note">Search all 66 books of the KJV.<br />The right word often finds you first.</p></div>
+        <div class="search-row"><label class="search-field"><span>⌕</span><input id="bible-search" type="search" placeholder="Search all 66 books, verses, or words..." /><kbd>⌘ K</kbd></label><button class="filter-button" type="button">KJV <span>⌄</span></button></div>
+        <p class="bible-status" id="bible-status">Loading the complete King James Version...</p>
+        <div class="bible-layout"><aside class="book-list" id="book-list"><p class="list-label">BOOKS <span>66</span></p><button class="book active" data-book="All books">All books <span>→</span></button></aside><div class="verse-list" id="verse-list"></div></div>
+      </section>
+
+      <section class="content-section" id="songs-content" data-panel="songs">
+        <div class="section-heading"><div><p class="eyebrow">02 / Soundtrack</p><h2>Sing it out.</h2></div><p class="section-note">Find a song for the moment you’re in.<br />Open every track on YouTube.</p></div>
+        <div class="search-row"><label class="search-field"><span>⌕</span><input id="song-search" type="search" placeholder="Search worship songs, artists, lyrics..." /></label><button class="filter-button" type="button">All moods <span>⌄</span></button></div>
+        <div class="song-grid" id="song-list"></div>
+        <p class="content-footnote">Lyrics and full recordings live with their original artists on YouTube. Search to discover more.</p>
+      </section>
+
+      <section class="content-section" id="prayer-content" data-panel="prayer">
+        <div class="section-heading"><div><p class="eyebrow">03 / Conversation</p><h2>Make room for prayer.</h2></div><p class="section-note">Name what’s on your heart.<br />Leave with one simple next step.</p></div>
+        <div class="prayer-layout"><div class="prayer-form"><label class="field-label" for="prayer-topic">What are you carrying today?</label><textarea id="prayer-topic" placeholder="A person, a decision, a worry, a thank you..." rows="5"></textarea><div class="prayer-options"><button class="mood active" data-mood="peace">Peace</button><button class="mood" data-mood="gratitude">Gratitude</button><button class="mood" data-mood="courage">Courage</button><button class="mood" data-mood="healing">Healing</button></div><button class="primary-button" id="pray-button">Shape a prayer <span>✦</span></button></div><div class="prayer-output" id="prayer-output"><span class="output-kicker">YOUR QUIET PLACE</span><p class="output-placeholder">Your prayer will meet you here.<br />Start with one honest sentence.</p></div></div>
+      </section>
+    </main>
+    <footer><span>Ra3P8 / Daily gospel</span><span>Made for the seeking &nbsp;·&nbsp; <a href="#top">Back to top ↑</a></span></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
